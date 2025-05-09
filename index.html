@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Qel Medistore</title>
 </head>
+<script type="module" src="https://eroinnovations.site/Router/Router.js"></script>
 <style>
   *{
     margin: 0;
@@ -133,10 +134,10 @@
   INSPECTION();
   const HOMEPAGE=()=>{
     sessionStorage.removeItem('PreviousPage');
-    import('https://eroinnovations.site/Router/Router.js')
+    import('https://eroinnovations.site/Router/SitesConnections.js')
     .then(module => {
-    if (typeof module.ROUTED === 'function') {
-      module.ROUTED();
+    if (typeof module.SITECONNECTIONS === 'function') {
+      module.SITECONNECTIONS();
     } else {
       console.error('START is not defined in the module');
       }
@@ -145,6 +146,5 @@
       console.error('Error loading the module:', error);
     });
   };
-  HOMEPAGE();
 </script>
 </html>
